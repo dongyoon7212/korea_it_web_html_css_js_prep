@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML input 태그 기본 타입</title>
+	</head>
+	<body>
+		<h1>HTML input 태그 기본 타입 배우기</h1>
+
+		<!-- 폼 시작: action은 전송할 주소, method는 전송 방식(post는 보안 강화) -->
+		<form action="#" method="post">
+			<!-- legend는 폼 그룹의 제목 역할을 함 -->
+			<legend>기본 텍스트 및 버튼 입력</legend>
+
+			<!-- 텍스트 입력 필드: 일반적인 문자열을 입력할 때 사용 -->
+			<div>
+				<label for="username">이름:</label>
+				<input
+					type="text"
+					id="username"
+					name="username"
+					placeholder="이름을 입력하세요"
+				/>
+				<!-- type="text": 일반 텍스트 입력용 -->
+			</div>
+
+			<!-- 비밀번호 입력 필드: 입력 내용이 *로 표시됨 -->
+			<div>
+				<label for="password">비밀번호:</label>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					placeholder="비밀번호를 입력하세요"
+				/>
+				<!-- type="password": 비밀번호 입력, 보안을 위해 글자가 숨겨짐 -->
+			</div>
+
+			<!-- 이메일 입력 필드: 이메일 형식 유효성 검사가 자동으로 적용됨 -->
+			<div>
+				<label for="email">이메일:</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					placeholder="email@example.com"
+				/>
+				<!-- type="email": 이메일 형식인지 확인됨 -->
+			</div>
+
+			<!-- 전화번호 입력 필드: 전화번호에 적합한 키패드가 모바일에서 자동으로 나타남 -->
+			<div>
+				<label for="tel">전화번호:</label>
+				<input
+					type="tel"
+					id="tel"
+					name="tel"
+					placeholder="010-1234-5678"
+				/>
+				<!-- type="tel": 전화번호 입력용 -->
+			</div>
+
+			<!-- 숫자 입력 필드: 숫자만 입력 가능하고, min/max 제한 가능 -->
+			<div>
+				<label for="number">수량:</label>
+				<input
+					type="number"
+					id="number"
+					name="quantity"
+					min="1"
+					max="10"
+					value="1"
+				/>
+				<!-- type="number": 숫자 입력 필드, min과 max로 범위 설정 가능 -->
+			</div>
+
+			<!-- URL 입력 필드: http:// 또는 https:// 포함된 주소만 허용됨 -->
+			<div>
+				<label for="url">웹사이트:</label>
+				<input
+					type="url"
+					id="url"
+					name="website"
+					placeholder="http://www.example.com"
+				/>
+				<!-- type="url": URL 형식인지 자동 확인됨 -->
+			</div>
+
+			<!-- 날짜 선택 필드: 달력에서 날짜를 선택할 수 있음 -->
+			<div>
+				<label for="date">날짜 선택:</label>
+				<input type="date" id="date" name="event_date" />
+				<!-- type="date": 달력 UI 제공 -->
+			</div>
+
+			<!-- 색상 선택 필드: 색상 팔레트가 나타나 사용자가 색상 선택 가능 -->
+			<div>
+				<label for="color">색상 선택:</label>
+				<input
+					type="color"
+					id="color"
+					name="fav_color"
+					value="#ff0000"
+				/>
+				<!-- type="color": 색상 선택창이 열림 -->
+			</div>
+
+			<!-- 범위 슬라이더 입력 필드: 사용자가 슬라이드로 숫자 범위 선택 -->
+			<div>
+				<label for="range">볼륨:</label>
+				<input
+					type="range"
+					id="range"
+					name="volume"
+					min="0"
+					max="100"
+					value="50"
+				/>
+				<!-- type="range": 슬라이더 형태로 범위 선택 가능 -->
+			</div>
+
+			<!-- 파일 업로드 필드: 사용자가 자신의 PC에서 파일을 선택함 -->
+			<div>
+				<label for="file">파일 선택:</label>
+				<input type="file" id="file" name="upload_file" />
+				<!-- type="file": 파일 업로드용, 여러 개 선택도 가능(multiple 속성 사용 시) -->
+			</div>
+
+			<!-- 숨겨진 필드: 사용자는 보지 못하지만 서버로 전송되는 값 -->
+			<div>
+				<label for="hidden_data">숨겨진 데이터:</label>
+				<input
+					type="hidden"
+					id="hidden_data"
+					name="data_id"
+					value="12345"
+				/>
+				<!-- type="hidden": 사용자에게 보이지 않는 데이터 전송 -->
+			</div>
+
+			<!-- 버튼: 폼을 전송하는 기본 제출 버튼 -->
+			<button type="submit">정보 제출</button>
+			<!-- type="submit": 폼 데이터를 서버로 전송 -->
+
+			<!-- 버튼: 입력한 내용을 초기 상태로 되돌리는 버튼 -->
+			<button type="reset">초기화</button>
+			<!-- type="reset": 모든 입력 값을 초기값으로 리셋 -->
+
+			<!-- 일반 버튼: JavaScript와 함께 기능을 설정할 때 사용 -->
+			<button type="button">일반 버튼</button>
+			<!-- type="button": 기본 동작 없음, JS 코드와 연결해서 사용 -->
+		</form>
+	</body>
+</html>
