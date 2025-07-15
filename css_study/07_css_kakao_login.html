@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+			}
+
+			.container {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			main {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			h1 {
+				margin: 0;
+			}
+
+			article {
+				position: relative;
+				width: 580px;
+				height: 480px;
+				margin: 40px auto 30px;
+				padding: 0 69px;
+				border: 1px solid #dbdbdb;
+				box-sizing: border-box;
+			}
+
+			#login-box {
+				height: 100%;
+				padding: 55px 0 50px;
+				box-sizing: border-box;
+			}
+
+			#form-box {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			input {
+				width: 100%;
+				height: 45px;
+				padding: 10px 0 8px;
+				font-size: 18px;
+				line-height: 25px;
+				color: #191919;
+				outline: none;
+				background-color: transparent;
+				border: 0;
+				border-bottom: 2px solid lightgray;
+				box-sizing: border-box;
+				margin-bottom: 13px;
+			}
+
+			input:focus {
+				border-bottom: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<main>
+				<div><h1>kakao</h1></div>
+				<article>
+					<div id="login-box">
+						<div id="form-box">
+							<form action="">
+								<input
+									type="text"
+									placeholder="카카오메일 아이디, 이메일, 전화번호 "
+								/>
+								<input type="password" placeholder="비밀번호" />
+							</form>
+						</div>
+					</div>
+				</article>
+			</main>
+		</div>
+	</body>
+</html>

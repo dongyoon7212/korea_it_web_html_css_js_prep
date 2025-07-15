@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<input type="text" id="search" value="테스트검색" />
+		<input type="text" class="inputs" />
+		<input type="text" class="inputs" />
+
+		<script>
+			// --- DOM 요소 선택 및 값 조작 (JavaScript) ---
+
+			// 1. `document.getElementById()`를 이용한 요소 선택
+			// HTML 문서(document)에서 id가 "search"인 요소를 찾아서 가져옵니다.
+			// `const`는 변하지 않는 값을 선언할 때 사용합니다. (상수)
+			const searchInput = document.getElementById("search");
+
+			// 선택한 요소 자체를 콘솔에 출력하여 확인합니다. (HTML 요소 객체가 나옴)
+			// console.log(document.getElementById("search")); // 이 줄은 활성화하여 students에게 보여주세요.
+
+			// 선택한 input 요소의 현재 'value' (값)를 콘솔에 출력합니다.
+			// 초기 HTML에 설정된 "테스트검색"이 출력될 것입니다.
+			console.log(searchInput.value);
+
+			// 선택한 input 요소의 'value'를 "검색내용"으로 변경합니다.
+			// 웹 페이지에서 해당 input 필드의 텍스트가 변경되는 것을 확인할 수 있습니다.
+			searchInput.value = "검색내용";
+
+			// 2. `document.getElementsByClassName()`을 이용한 요소 선택
+			// HTML 문서에서 class 이름이 "inputs"인 모든 요소를 찾아 가져옵니다.
+			// 이름에 'Elements' (복수)가 붙은 것에 주목하세요. 여러 개를 가져옵니다.
+			// 반환되는 것은 HTMLCollection이라는 '배열과 비슷한' 객체입니다.
+			const inputs = document.getElementsByClassName("inputs");
+
+			// inputs 변수에 어떤 요소들이 담겨 있는지 콘솔에 출력하여 확인합니다.
+			// HTMLCollection 객체가 출력되며, 각 요소는 인덱스(0부터 시작)로 접근할 수 있습니다.
+			console.log(inputs);
+
+			// 첫 번째 .inputs 클래스를 가진 요소(인덱스 0)의 value를 "aaa"로 변경합니다.
+			inputs[0].value = "aaa";
+			// 두 번째 .inputs 클래스를 가진 요소(인덱스 1)의 value를 "bbb"로 변경합니다.
+			inputs[1].value = "bbb";
+
+			// 3. `document.getElementsByTagName()`을 이용한 요소 선택
+			// HTML 문서에서 태그 이름이 "input"인 모든 요소를 찾아 가져옵니다.
+			// 이 역시 'Elements' (복수)이므로 여러 개를 가져옵니다.
+			// 모든 input 태그 (id="search"를 가진 input 포함)가 선택됩니다.
+			const inputs2 = document.getElementsByTagName("input");
+			console.log(inputs2); // 모든 input 태그들이 HTMLCollection 형태로 출력됩니다.
+
+			// --- 현대적인 DOM 요소 선택 (CSS 선택자 기반) ---
+
+			// 4. `document.querySelector()`를 이용한 요소 선택
+			// CSS 선택자(#id, .class, 태그이름 등)를 사용하여 요소를 선택합니다.
+			// `querySelector`는 해당 선택자에 해당하는 '첫 번째' 요소만 가져옵니다.
+
+			// id가 "search"인 요소를 선택합니다. (getElementById와 동일한 결과를 얻습니다.)
+			const searchInput2 = document.querySelector("#search");
+			console.log("querySelector로 선택한 searchInput:", searchInput2); // 확인용
+
+			// class가 "inputs"인 요소 중 '첫 번째' 요소만 가져옵니다.
+			const inputs3 = document.querySelector(".inputs");
+			console.log("querySelector로 선택한 첫 번째 .inputs:", inputs3); // 확인용
+
+			// 태그 이름이 "input"인 요소 중 '첫 번째' 요소만 가져옵니다.
+			// 이 경우 id="search"를 가진 input 태그가 선택됩니다.
+			const inputs4 = document.querySelector("input");
+			console.log("querySelector로 선택한 첫 번째 input:", inputs4); // 확인용
+
+			// 5. `document.querySelectorAll()`을 이용한 요소 선택
+			// `querySelector`와 달리 `All`이 붙어있으므로, 해당 CSS 선택자에 해당하는 '모든' 요소를 가져옵니다.
+			// 반환되는 것은 NodeList라는 '배열과 비슷한' 객체입니다. (HTMLCollection과 유사하나 미세한 차이 존재)
+
+			// class가 "inputs"인 '모든' 요소를 가져옵니다. (inputs 변수와 유사하지만 다른 객체 타입)
+			const inputs5 = document.querySelectorAll(".inputs");
+			console.log("querySelectorAll로 선택한 모든 .inputs:", inputs5); // 확인용
+			// NodeList도 인덱스로 접근 가능하며, forEach 등의 배열 메서드도 사용 가능합니다.
+
+			// 태그 이름이 "input"인 '모든' 요소를 가져옵니다. (inputs2 변수와 유사하지만 다른 객체 타입)
+			const inputs6 = document.querySelectorAll("input");
+			console.log("querySelectorAll로 선택한 모든 input:", inputs6); // 확인용
+
+			// --- 수업 진행 팁 ---
+			// 1. 각 console.log() 결과를 개발자 도구(F12)의 'Console' 탭에서 직접 보여주며 설명합니다.
+			// 2. `searchInput.value = "검색내용";`처럼 값을 변경하는 코드를 실행한 후,
+			//    실제로 웹 페이지의 input 필드 내용이 바뀌는 것을 시각적으로 보여주며 설명합니다.
+			// 3. 학생들에게 직접 코드를 수정하고, 다양한 선택자를 넣어보며 결과를 확인하게 유도합니다.
+			// 4. getElementsBy* 메서드와 querySelector/All 메서드의 반환 타입(HTMLCollection vs NodeList)과
+			//    메서드의 이름(`Elements` vs `All`, 단수 vs 복수)에 집중하여 차이점을 설명하면 좋습니다.
+		</script>
+	</body>
+</html>
