@@ -3,7 +3,7 @@ const student = {
 	name: "이동윤",
 	age: 27,
 	address: "부산 사하구",
-	phone: "010-9988-1916",
+	phone: "010-9402-7212",
 };
 
 // 비구조 할당 (복습): 객체에서 원하는 속성만 추출하여 변수로 선언합니다.
@@ -13,7 +13,7 @@ console.log(name, address); // 이동윤 부산 사하구
 // REST 문법 (Rest parameters): 나머지 속성들을 새로운 객체 또는 배열로 묶을 때 사용합니다.
 // 객체에서 'age', 'phone' 속성을 제외한 나머지 속성들을 'a'라는 새로운 객체로 묶습니다.
 const { age, phone, ...a } = student;
-console.log(age, phone, a); // 27 010-9988-1916 { name: '이동윤', address: '부산 사하구' }
+console.log(age, phone, a); // 27 010-9402-7212 { name: '이동윤', address: '부산 사하구' }
 
 const numbers = [1, 2, 3, 4];
 // 배열에서 첫 두 요소를 'n1', 'n2'에 할당하고, 나머지 요소들을 'ns'라는 새로운 배열로 묶습니다.
@@ -41,8 +41,8 @@ function addName(name) {
 	names = [...names, name]; // 기존 'names' 배열의 요소를 복사하고 새로운 'name'을 추가하여 'names'를 재할당합니다.
 }
 addName("이동윤");
-addName("이동이");
-console.log(names); // ['이동윤', '이동이']
+addName("삼동윤");
+console.log(names); // ['이동윤', '삼동윤']
 
 let obj = {
 	// 객체를 선언합니다.
